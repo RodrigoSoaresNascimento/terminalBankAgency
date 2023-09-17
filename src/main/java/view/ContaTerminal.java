@@ -80,13 +80,22 @@ public class ContaTerminal {
         String name = scanner.nextLine();
         System.out.println("Por favor, digite o seu cpf");
         String cpf = scanner.nextLine();
-        System.out.println("Por favor, digite o seu email");
-        String email = scanner.nextLine();
-        System.out.println("Por favor, digite a sua idade");
-        int age = scanner.nextInt();
+        if (cpf.matches("^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$")) {
+            System.out.println("Por favor, digite o seu email");
+            String email = scanner.nextLine();
+            if (email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")){
+                System.out.println("Por favor, digite a sua idade");
+                int age = scanner.nextInt();
+                costumer = new Costumer(cpf, name, age, email);
+            }else {
+                System.out.println("Formato do email invalido");
+            }
+
+        } else {
+            System.out.println("O CPF não é válido");
+        }
         String accountNumber = gerarNumeroContaBancariaAleatorio();
         currentAccount = new CurrentAccount(accountNumber,agency);
-        costumer = new Costumer(cpf, name, age, email);
         System.out.println("Olá "+name+", obrigado por criar uma conta em nosso banco, sua agência é "+agency+", conta "+accountNumber+" e seu saldo "+currentAccount.getBalance()+" já está disponível para saque");
         menu();
 

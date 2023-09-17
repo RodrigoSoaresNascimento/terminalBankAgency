@@ -23,9 +23,8 @@ Os campos em [ ] devem ser alterados pelas informações que forem inseridas pel
 
 Instruções de uso:
 
-Clone o repositório:
-[git clone https://github.com/[seu-nome]/desafio-sintaxe.git](https://github.com/RodrigoSoaresNascimento/terminalBankAgency/edit/main/README.md)
-
+1. Clone o repositório:
+git clone https://github.com/RodrigoSoaresNascimento/terminalBankAgency/tree/main
 
 2. Entre no diretório do projeto:
 
